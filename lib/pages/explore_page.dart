@@ -4,7 +4,7 @@ import 'package:instagramflutter/models/post.dart';
 import 'package:instagramflutter/widgets/category_bar.dart';
 import 'package:instagramflutter/widgets/custom_explore_app_bar.dart';
 import 'package:instagramflutter/widgets/explore_tile.dart';
-import 'package:instagramflutter/widgets/persistentt_header.dart';
+import 'package:instagramflutter/widgets/persistent_header.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class ExplorePage extends StatelessWidget {
@@ -24,6 +24,8 @@ class ExplorePage extends StatelessWidget {
                 child: CategoryBar(
                   categories: ["Original Memes", "luan", "Programing", "laugh"],
                 ),
+                mXExtent: 50,
+                mnExtent: 50,
               ),
             ),
             SliverStaggeredGrid.countBuilder(
@@ -46,7 +48,7 @@ class ExplorePage extends StatelessWidget {
                   post: Post(
                     '$index',
                     currentUser,
-                    'https://picsum.photos/id/${1047 + index}/400/${index % 20 == 2 ? 805 :  400}',
+                    'https://picsum.photos/id/${1047 + index}/400/${index % 20 == 2 ? 805 : 400}',
                     true,
                     true,
                     'title',
