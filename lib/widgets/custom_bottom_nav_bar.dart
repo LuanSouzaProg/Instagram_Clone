@@ -11,6 +11,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      color: selectedPageIndex == 2 ? Colors.black : Colors.white,
       child: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -18,23 +19,27 @@ class CustomBottomNavigationBar extends StatelessWidget {
             IconButton(
                 onPressed: () => {onIconTap(0)},
                 iconSize: _iconSize,
+                color: selectedPageIndex == 2 ? Colors.white : Colors.black,
                 icon: Icon(
                     selectedPageIndex == 0 ? Icons.home : Icons.home_outlined)),
             IconButton(
                 onPressed: () => {onIconTap(1)},
                 iconSize: _iconSize,
+                color: selectedPageIndex == 2 ? Colors.white : Colors.black,
                 icon: Icon(selectedPageIndex == 1
                     ? Icons.search
                     : Icons.search_outlined)),
             IconButton(
                 onPressed: () => {onIconTap(2)},
                 iconSize: _iconSize,
+                color: selectedPageIndex == 2 ? Colors.white : Colors.black,
                 icon: Icon(selectedPageIndex == 2
                     ? Icons.smart_display
                     : Icons.smart_display_outlined)),
             IconButton(
                 onPressed: () => {onIconTap(3)},
                 iconSize: _iconSize,
+                color: selectedPageIndex == 2 ? Colors.white : Colors.black,
                 icon: Icon(selectedPageIndex == 3
                     ? Icons.local_mall
                     : Icons.local_mall_outlined)),

@@ -3,13 +3,12 @@ import 'package:instagramflutter/models/reel.dart';
 import 'package:instagramflutter/models/story.dart';
 import 'package:instagramflutter/models/user.dart';
 
-User currentUser =
-    User("id", "Luan Souza", "https://picsum.photos/id/1062/400/400");
-User demoUser1 = User('id1' , "user_1", "https://picsum.photos/id/1063/400/400");
-User demoUser2 = User('id2' , "user_1", "https://picsum.photos/id/1064/400/400");
-User demoUser3 = User('id3' , "user_1", "https://picsum.photos/id/1065/400/400");
-User demoUser4 = User('id4' , "user_1", "https://picsum.photos/id/1066/400/400");
-User demoUser5 = User('id5' , "user_1", "https://picsum.photos/id/1067/400/400");
+User currentUser = User("id", "Luan Souza", "https://picsum.photos/id/1062/400/400");
+User demoUser1 = User('id1', "user_1", "https://picsum.photos/id/1063/400/400");
+User demoUser2 = User('id2', "user_1", "https://picsum.photos/id/1064/400/400");
+User demoUser3 = User('id3', "user_1", "https://picsum.photos/id/1065/400/400");
+User demoUser4 = User('id4', "user_1", "https://picsum.photos/id/1066/400/400");
+User demoUser5 = User('id5', "user_1", "https://picsum.photos/id/1067/400/400");
 
 final List<Story> stories = [
   Story("id", currentUser),
@@ -78,7 +77,7 @@ final List<Post> posts = [
 final List<Reel> reels = [
   Reel(
     demoUser1,
-      "https://picsum.photos/id/1071/400/400",
+    "https://picsum.photos/id/1071/400/400",
     "Eden Mix",
     "very productive day today!!very productive day today!!very productive day today!!very productive day today!!very productive day today!!",
     "10k",
@@ -132,4 +131,3 @@ final List<Reel> reels = [
     demoUser1,
   ),
 ];
-
