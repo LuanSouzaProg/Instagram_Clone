@@ -11,6 +11,8 @@ class ProfileHeader extends StatefulWidget {
 }
 
 class _ProfileHeaderState extends State<ProfileHeader> {
+  bool _isExpansionTileOpen = false;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -55,7 +57,126 @@ class _ProfileHeaderState extends State<ProfileHeader> {
               ),
             ],
           ),
-        )
+        ),
+        SizedBox(
+          height: 12,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(7),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey.shade400),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Text(
+                    "Edit Profile",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 14,
+                        color: Colors.black),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                padding: EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade400),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Icon(Icons.expand_more_outlined),
+              ),
+            ],
+          ),
+        ),
+        ExpansionTile(
+          onExpansionChanged: (_isOpen) => {
+            setState(
+              () {
+                _isExpansionTileOpen = _isOpen;
+              },
+            ),
+          },
+          title: Text(
+            "Story Highlights",
+            style: TextStyle(
+                fontWeight: FontWeight.w600, fontSize: 14, color: Colors.black),
+          ),
+          subtitle: _isExpansionTileOpen
+              ? Text(
+                  "Keep your favorite stories on your profile",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 13.5,
+                      fontWeight: FontWeight.w400),
+                )
+              : null,
+          trailing: Icon(
+            _isExpansionTileOpen
+                ? Icons.expand_less_outlined
+                : Icons.expand_more_outlined,
+            color: Colors.grey.shade500,
+          ),
+          children: [
+            Container(
+              height: 80,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 7,
+                itemBuilder: (context, index) {
+                  return index != 0
+                      ? Container(
+                          width: 80,
+                          alignment: Alignment.topCenter,
+                          padding: EdgeInsets.symmetric(horizontal: 5),
+                          child: CircleAvatar(
+                            radius: 30,
+                            backgroundColor: Colors.grey.shade300,
+                          ),
+                        )
+                      : Container(
+                          width: 80,
+                          color: Colors.amber,
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Colors.grey.shade400,
+                                  ),
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                child: Icon(
+                                  Icons.add,
+                                  size: 30,
+                                ),
+                              ),
+                              Text(
+                                "New",
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.black,
+                                ),
+                              )
+                            ],
+                          ),
+                        );
+                },
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
