@@ -25,18 +25,12 @@ class _ProfileHeaderState extends State<ProfileHeader> {
             children: [
               addStoryCardProfile(),
               SizedBox(width: 8),
-              ProfileLabelCountWidget(
-                labelText: 'Posts',
-                count: '140',
-              ),
+              ProfileLabelCountWidget(labelText: 'Posts', count: '140'),
               ProfileLabelCountWidget(
                 labelText: 'Followers',
                 count: '440',
               ),
-              ProfileLabelCountWidget(
-                labelText: 'Following',
-                count: '370',
-              ),
+              ProfileLabelCountWidget(labelText: 'Following', count: '370'),
             ],
           ),
         ),
@@ -51,9 +45,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4),
-                child: Text(
-                  "{Flutter Developer}",
-                ),
+                child: Text("{Flutter Developer}"),
               ),
             ],
           ),
@@ -138,37 +130,33 @@ class _ProfileHeaderState extends State<ProfileHeader> {
                           alignment: Alignment.topCenter,
                           padding: EdgeInsets.symmetric(horizontal: 5),
                           child: CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.grey.shade300,
-                          ),
+                              radius: 30,
+                              backgroundColor: Colors.grey.shade300),
                         )
                       : Container(
                           width: 80,
-                          color: Colors.amber,
                           child: Column(
                             children: [
                               Container(
                                 width: 60,
                                 height: 60,
                                 decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Colors.grey.shade400,
-                                  ),
+                                  border:
+                                      Border.all(color: Colors.grey.shade400),
                                   borderRadius: BorderRadius.circular(30),
                                 ),
-                                child: Icon(
-                                  Icons.add,
-                                  size: 30,
-                                ),
+                                child: Icon(Icons.add, size: 30),
+                              ),
+                              SizedBox(
+                                height: 3,
                               ),
                               Text(
                                 "New",
                                 style: TextStyle(
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black,
-                                ),
-                              )
+                                    fontSize: 11,
+                                    fontWeight: FontWeight.w500,
+                                    color: Colors.black),
+                              ),
                             ],
                           ),
                         );
@@ -176,6 +164,12 @@ class _ProfileHeaderState extends State<ProfileHeader> {
               ),
             ),
           ],
+        ),
+        Divider(
+          height: 1,
+          color: _isExpansionTileOpen
+              ? Colors.transparent
+              : Colors.grey.shade400,
         ),
       ],
     );
